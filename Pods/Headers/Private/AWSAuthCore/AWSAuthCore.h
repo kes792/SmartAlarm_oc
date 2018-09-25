@@ -1,0 +1,1 @@
+../../../AWSAuthCore/AWSAuthSDK/Sources/AWSAuthCore/AWSAuthCore.h

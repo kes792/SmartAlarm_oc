@@ -1,0 +1,1 @@
+../../../AWSUserPoolsSignIn/AWSAuthSDK/Sources/AWSUserPoolsSignIn/AWSUserPoolsUIOperations.h

@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AWSAuthCore/AWSAuthCore.h>
+#import <AWSPinpoint/AWSPinpoint.h>
+#import <AWSUserPoolsSignIn/AWSUserPoolsSignIn.h>
+#import "AWSSNS.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property(atomic) AWSPinpoint *pinpoint;
 
 
 @end

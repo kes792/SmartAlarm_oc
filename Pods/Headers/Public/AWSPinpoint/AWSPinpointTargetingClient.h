@@ -1,0 +1,1 @@
+../../../AWSPinpoint/AWSPinpoint/AWSPinpointTargetingClient.h

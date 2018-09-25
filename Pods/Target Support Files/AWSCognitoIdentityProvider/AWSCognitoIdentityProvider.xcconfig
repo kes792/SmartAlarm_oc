@@ -1,0 +1,11 @@
+CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/AWSCognitoIdentityProvider
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/AWSCognitoIdentityProvider" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AWSCognitoIdentityProvider" "${PODS_ROOT}/Headers/Public/AWSCognitoIdentityProviderASF" "${PODS_ROOT}/Headers/Public/AWSCore"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AWSCognitoIdentityProviderASF" "${PODS_CONFIGURATION_BUILD_DIR}/AWSCore" "${PODS_ROOT}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF/Internal"
+OTHER_LDFLAGS = -framework "Security" -framework "UIKit"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/AWSCognitoIdentityProvider
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES

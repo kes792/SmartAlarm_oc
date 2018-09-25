@@ -1,0 +1,1 @@
+../../../AWSAuthUI/AWSAuthSDK/Sources/AWSUserPoolsSignIn/UserPoolsUI/AWSFormTableDelegate.h

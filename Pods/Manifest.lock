@@ -1,0 +1,59 @@
+PODS:
+  - AWSAuthCore (2.6.28):
+    - AWSCore (= 2.6.28)
+  - AWSAuthUI (2.6.28):
+    - AWSAuthCore (= 2.6.28)
+    - AWSCore (= 2.6.28)
+  - AWSCognitoIdentityProvider (2.6.28):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.6.28)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.6.28)
+  - AWSIoT (2.6.28):
+    - AWSCore (= 2.6.28)
+  - AWSPinpoint (2.6.28):
+    - AWSCore (= 2.6.28)
+  - AWSSNS (2.6.28):
+    - AWSCore (= 2.6.28)
+  - AWSUserPoolsSignIn (2.6.28):
+    - AWSAuthCore (= 2.6.28)
+    - AWSCognitoIdentityProvider (= 2.6.28)
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - AWSAuthCore
+  - AWSAuthUI
+  - AWSIoT
+  - AWSPinpoint
+  - AWSSNS
+  - AWSUserPoolsSignIn
+  - Masonry
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSIoT
+    - AWSPinpoint
+    - AWSSNS
+    - AWSUserPoolsSignIn
+    - Masonry
+
+SPEC CHECKSUMS:
+  AWSAuthCore: 0cac96d75993f2d13c5a357b88e965ae497c9eb7
+  AWSAuthUI: 25fae29ef27cad505e78d25be1d03eebb72fe068
+  AWSCognitoIdentityProvider: 9eec83ce5774fc7bf1d9abaa6d74e077acc763ef
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: f75fcf5b2f4325da49ae1f7cb5484778d3b0acc6
+  AWSIoT: b7e4f1bae2e4446d7de14efd87523904c7ac7c39
+  AWSPinpoint: e59c331e17a092f28fec768076cbcd32e087360e
+  AWSSNS: a67710a80c8d380e34248b16e503e0719f02a28d
+  AWSUserPoolsSignIn: 8383829e97d2a47984276fc7260f3bdfeddc6d2e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: bb0b2db5fd8f7ccc5eec27def94ad455f564ab30
+
+COCOAPODS: 1.5.3

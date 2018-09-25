@@ -1,0 +1,1 @@
+../../../AWSAuthUI/AWSAuthSDK/Sources/AWSAuthUI/AWSAuthUI.h
