@@ -1,1 +1,0 @@
-../../../AWSPinpoint/AWSPinpoint/AWSPinpointAnalytics/AWSPinpointAnalyticsModel.h
