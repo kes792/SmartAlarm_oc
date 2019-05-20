@@ -18,9 +18,11 @@
 #import "AWSPinpointDateUtils.h"
 #import "AWSPinpointNotificationManager.h"
 #import "AWSPinpointEndpointProfile.h"
+#import "AWSPinpointEventRecorder.h"
 #import "AWSPinpointContext.h"
 #import "AWSPinpointTargetingService.h"
 #import "AWSPinpointConfiguration.h"
+#import "AWSPinpointEventRecorder.h"
 
 NSString *const AWSPinpointEndpointAttributesKey = @"AWSPinpointEndpointAttributesKey";
 NSString *const AWSPinpointEndpointMetricsKey = @"AWSPinpointEndpointMetricsKey";
@@ -34,6 +36,7 @@ NSString *const APNS_CHANNEL_TYPE = @"APNS";
 @property (nonatomic) NSMutableArray* endpointObservers;
 @property (nonatomic) NSMutableDictionary* globalAttributes;
 @property (nonatomic) NSMutableDictionary* globalMetrics;
+@property (nonatomic, strong) AWSPinpointEventRecorder *eventRecorder;
 @property (nonatomic) AWSPinpointEndpointProfile *endpointProfile;
 
 @end
@@ -50,21 +53,30 @@ NSString *const APNS_CHANNEL_TYPE = @"APNS";
 - (void) setEndpointOptOut:(BOOL) applicationLevelOptOut;
 @end
 
+@interface AWSPinpointEventRecorder ()
+- (instancetype) initWithContext:(AWSPinpointContext *) context;
+- (AWSTask*) updateSessionStartWithCampaignAttributes:(NSDictionary*) attributes;
+- (AWSTask *) putEvents:(NSDictionary *)temporaryEvents
+                  error:(NSError* __autoreleasing *) error
+        endpointProfile:(AWSPinpointEndpointProfile *) profile;
+@end
+
 @implementation AWSPinpointTargetingClient
 
-- (instancetype)init {
+- (instancetype) init {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:@"You must not initialize this class directly. Access the AWSPinpointTargetingClient from AWSPinpoint."
                                  userInfo:nil];
 }
 
-- (instancetype)initWithContext:(AWSPinpointContext *) context {
+- (instancetype) initWithContext:(AWSPinpointContext *) context {
     if (self = [super init]) {
         _context = context;
         NSDictionary *customAttributes = [context.configuration.userDefaults objectForKey:AWSPinpointEndpointAttributesKey];
         _globalAttributes = [[NSMutableDictionary alloc] initWithDictionary:customAttributes];
         NSDictionary *customMetrics = [context.configuration.userDefaults objectForKey:AWSPinpointEndpointMetricsKey];
         _globalMetrics = [[NSMutableDictionary alloc] initWithDictionary:customMetrics];
+        _eventRecorder = [[AWSPinpointEventRecorder alloc] initWithContext:context];
     }
     
     return self;
@@ -107,7 +119,7 @@ NSString *const APNS_CHANNEL_TYPE = @"APNS";
     return localEndpointProfile;
 }
 
-- (void)addMetricsAndAttributesToEndpointProfile:(AWSPinpointEndpointProfile *)localEndpointProfile {
+- (void) addMetricsAndAttributesToEndpointProfile:(AWSPinpointEndpointProfile *) localEndpointProfile {
     // Add attributes
     if (self.globalAttributes.count > 0) {
         AWSDDLogVerbose(@"Applying Global Endpoint Attributes: %@", self.globalAttributes);
@@ -275,10 +287,6 @@ NSString *const APNS_CHANNEL_TYPE = @"APNS";
 }
 
 - (AWSPinpointTargetingUpdateEndpointRequest*) updateEndpointRequestForEndpoint:(AWSPinpointEndpointProfile *) endpoint {
-    AWSPinpointTargetingUpdateEndpointRequest *updateEndpointRequest = [AWSPinpointTargetingUpdateEndpointRequest new];
-    updateEndpointRequest.endpointId = endpoint.endpointId;
-    updateEndpointRequest.applicationId = endpoint.applicationId;
-    
     AWSPinpointTargetingEndpointRequest *endpointRequest =  [AWSPinpointTargetingEndpointRequest new];
     endpointRequest.channelType = [endpoint.channelType isEqualToString:APNS_CHANNEL_TYPE] ? AWSPinpointTargetingChannelTypeApns : AWSPinpointTargetingChannelTypeApnsSandbox;
     endpointRequest.address = endpoint.address;
@@ -290,7 +298,12 @@ NSString *const APNS_CHANNEL_TYPE = @"APNS";
     endpointRequest.metrics = [endpoint allMetrics];
     endpointRequest.user = [self userModelForUser:endpoint.user];
     
+    AWSPinpointTargetingUpdateEndpointRequest *updateEndpointRequest = [AWSPinpointTargetingUpdateEndpointRequest new];
+    updateEndpointRequest.endpointId = endpoint.endpointId;
+    updateEndpointRequest.applicationId = endpoint.applicationId;
     updateEndpointRequest.endpointRequest = endpointRequest;
+    
+    AWSDDLogVerbose(@"UpdateEndpointRequest: [%@]", updateEndpointRequest);
     
     return updateEndpointRequest;
 }

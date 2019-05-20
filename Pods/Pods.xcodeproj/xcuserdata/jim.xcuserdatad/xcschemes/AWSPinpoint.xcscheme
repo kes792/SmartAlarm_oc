@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD8919F962E73EB5719034DB77B64A81"
+               BlueprintIdentifier = "FAA97796478A3C95E870DC577AF18069"
                BlueprintName = "AWSPinpoint"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libAWSPinpoint.a">

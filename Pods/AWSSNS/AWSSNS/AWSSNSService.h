@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -19,6 +19,9 @@
 #import "AWSSNSResources.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+//! SDK version for AWSSNS
+FOUNDATION_EXPORT NSString *const AWSSNSSDKVersion;
 
 /**
  <fullname>Amazon Simple Notification Service</fullname><p>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this product see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features and their associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer Guide</a>. </p><p>We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>. </p>
@@ -298,7 +301,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param request A container for the necessary parameters to execute the CreateTopic service method.
 
- @return An instance of `AWSTask`. On successful execution, `task.result` will contain an instance of `AWSSNSCreateTopicResponse`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorTopicLimitExceeded`, `AWSSNSErrorInternalError`, `AWSSNSErrorAuthorizationError`.
+ @return An instance of `AWSTask`. On successful execution, `task.result` will contain an instance of `AWSSNSCreateTopicResponse`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorTopicLimitExceeded`, `AWSSNSErrorInternalError`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSCreateTopicInput
  @see AWSSNSCreateTopicResponse
@@ -311,7 +314,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param request A container for the necessary parameters to execute the CreateTopic service method.
  @param completionHandler The completion handler to call when the load request is complete.
                           `response` - A response object, or `nil` if the request failed.
-                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorTopicLimitExceeded`, `AWSSNSErrorInternalError`, `AWSSNSErrorAuthorizationError`.
+                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorTopicLimitExceeded`, `AWSSNSErrorInternalError`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSCreateTopicInput
  @see AWSSNSCreateTopicResponse
@@ -489,7 +492,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param request A container for the necessary parameters to execute the GetTopicAttributes service method.
 
- @return An instance of `AWSTask`. On successful execution, `task.result` will contain an instance of `AWSSNSGetTopicAttributesResponse`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`.
+ @return An instance of `AWSTask`. On successful execution, `task.result` will contain an instance of `AWSSNSGetTopicAttributesResponse`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSGetTopicAttributesInput
  @see AWSSNSGetTopicAttributesResponse
@@ -502,7 +505,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param request A container for the necessary parameters to execute the GetTopicAttributes service method.
  @param completionHandler The completion handler to call when the load request is complete.
                           `response` - A response object, or `nil` if the request failed.
-                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`.
+                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSGetTopicAttributesInput
  @see AWSSNSGetTopicAttributesResponse
@@ -689,7 +692,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param request A container for the necessary parameters to execute the Publish service method.
 
- @return An instance of `AWSTask`. On successful execution, `task.result` will contain an instance of `AWSSNSPublishResponse`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInvalidParameterValue`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorEndpointDisabled`, `AWSSNSErrorPlatformApplicationDisabled`, `AWSSNSErrorAuthorizationError`.
+ @return An instance of `AWSTask`. On successful execution, `task.result` will contain an instance of `AWSSNSPublishResponse`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInvalidParameterValue`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorEndpointDisabled`, `AWSSNSErrorPlatformApplicationDisabled`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorKMSDisabled`, `AWSSNSErrorKMSInvalidState`, `AWSSNSErrorKMSNotFound`, `AWSSNSErrorKMSOptInRequired`, `AWSSNSErrorKMSThrottling`, `AWSSNSErrorKMSAccessDenied`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSPublishInput
  @see AWSSNSPublishResponse
@@ -702,7 +705,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param request A container for the necessary parameters to execute the Publish service method.
  @param completionHandler The completion handler to call when the load request is complete.
                           `response` - A response object, or `nil` if the request failed.
-                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInvalidParameterValue`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorEndpointDisabled`, `AWSSNSErrorPlatformApplicationDisabled`, `AWSSNSErrorAuthorizationError`.
+                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInvalidParameterValue`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorEndpointDisabled`, `AWSSNSErrorPlatformApplicationDisabled`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorKMSDisabled`, `AWSSNSErrorKMSInvalidState`, `AWSSNSErrorKMSNotFound`, `AWSSNSErrorKMSOptInRequired`, `AWSSNSErrorKMSThrottling`, `AWSSNSErrorKMSAccessDenied`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSPublishInput
  @see AWSSNSPublishResponse
@@ -827,7 +830,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param request A container for the necessary parameters to execute the SetTopicAttributes service method.
 
- @return An instance of `AWSTask`. On successful execution, `task.result` will be `nil`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`.
+ @return An instance of `AWSTask`. On successful execution, `task.result` will be `nil`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSSetTopicAttributesInput
  */
@@ -838,7 +841,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param request A container for the necessary parameters to execute the SetTopicAttributes service method.
  @param completionHandler The completion handler to call when the load request is complete.
-                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`.
+                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSSetTopicAttributesInput
  */
@@ -849,7 +852,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param request A container for the necessary parameters to execute the Subscribe service method.
 
- @return An instance of `AWSTask`. On successful execution, `task.result` will contain an instance of `AWSSNSSubscribeResponse`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorSubscriptionLimitExceeded`, `AWSSNSErrorFilterPolicyLimitExceeded`, `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`.
+ @return An instance of `AWSTask`. On successful execution, `task.result` will contain an instance of `AWSSNSSubscribeResponse`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorSubscriptionLimitExceeded`, `AWSSNSErrorFilterPolicyLimitExceeded`, `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSSubscribeInput
  @see AWSSNSSubscribeResponse
@@ -862,7 +865,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param request A container for the necessary parameters to execute the Subscribe service method.
  @param completionHandler The completion handler to call when the load request is complete.
                           `response` - A response object, or `nil` if the request failed.
-                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorSubscriptionLimitExceeded`, `AWSSNSErrorFilterPolicyLimitExceeded`, `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`.
+                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorSubscriptionLimitExceeded`, `AWSSNSErrorFilterPolicyLimitExceeded`, `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorNotFound`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSSubscribeInput
  @see AWSSNSSubscribeResponse
@@ -874,7 +877,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param request A container for the necessary parameters to execute the Unsubscribe service method.
 
- @return An instance of `AWSTask`. On successful execution, `task.result` will be `nil`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorNotFound`.
+ @return An instance of `AWSTask`. On successful execution, `task.result` will be `nil`. On failed execution, `task.error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorNotFound`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSUnsubscribeInput
  */
@@ -885,7 +888,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param request A container for the necessary parameters to execute the Unsubscribe service method.
  @param completionHandler The completion handler to call when the load request is complete.
-                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorNotFound`.
+                          `error` - An error object that indicates why the request failed, or `nil` if the request was successful. On failed execution, `error` may contain an `NSError` with `AWSSNSErrorDomain` domain and the following error code: `AWSSNSErrorInvalidParameter`, `AWSSNSErrorInternalError`, `AWSSNSErrorAuthorizationError`, `AWSSNSErrorNotFound`, `AWSSNSErrorInvalidSecurity`.
  
  @see AWSSNSUnsubscribeInput
  */

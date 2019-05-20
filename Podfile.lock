@@ -1,23 +1,23 @@
 PODS:
-  - AWSAuthCore (2.6.28):
-    - AWSCore (= 2.6.28)
-  - AWSAuthUI (2.6.28):
-    - AWSAuthCore (= 2.6.28)
-    - AWSCore (= 2.6.28)
-  - AWSCognitoIdentityProvider (2.6.28):
+  - AWSAuthCore (2.9.3):
+    - AWSCore (= 2.9.3)
+  - AWSAuthUI (2.9.3):
+    - AWSAuthCore (= 2.9.3)
+    - AWSCore (= 2.9.3)
+  - AWSCognitoIdentityProvider (2.9.3):
     - AWSCognitoIdentityProviderASF (= 1.0.1)
-    - AWSCore (= 2.6.28)
+    - AWSCore (= 2.9.3)
   - AWSCognitoIdentityProviderASF (1.0.1)
-  - AWSCore (2.6.28)
-  - AWSIoT (2.6.28):
-    - AWSCore (= 2.6.28)
-  - AWSPinpoint (2.6.28):
-    - AWSCore (= 2.6.28)
-  - AWSSNS (2.6.28):
-    - AWSCore (= 2.6.28)
-  - AWSUserPoolsSignIn (2.6.28):
-    - AWSAuthCore (= 2.6.28)
-    - AWSCognitoIdentityProvider (= 2.6.28)
+  - AWSCore (2.9.3)
+  - AWSIoT (2.9.3):
+    - AWSCore (= 2.9.3)
+  - AWSPinpoint (2.9.3):
+    - AWSCore (= 2.9.3)
+  - AWSSNS (2.9.3):
+    - AWSCore (= 2.9.3)
+  - AWSUserPoolsSignIn (2.9.3):
+    - AWSAuthCore (= 2.9.3)
+    - AWSCognitoIdentityProvider (= 2.9.3)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
@@ -43,15 +43,15 @@ SPEC REPOS:
     - Masonry
 
 SPEC CHECKSUMS:
-  AWSAuthCore: 0cac96d75993f2d13c5a357b88e965ae497c9eb7
-  AWSAuthUI: 25fae29ef27cad505e78d25be1d03eebb72fe068
-  AWSCognitoIdentityProvider: 9eec83ce5774fc7bf1d9abaa6d74e077acc763ef
+  AWSAuthCore: 616e8c65607d7d4b29a1320e62fe2c6586f2f396
+  AWSAuthUI: 268b85517ea5b0ed1a8898b572f31af012b4cac5
+  AWSCognitoIdentityProvider: 827e8d7ec506dd09ed4f72afe7be587a6dd85af5
   AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
-  AWSCore: f75fcf5b2f4325da49ae1f7cb5484778d3b0acc6
-  AWSIoT: b7e4f1bae2e4446d7de14efd87523904c7ac7c39
-  AWSPinpoint: e59c331e17a092f28fec768076cbcd32e087360e
-  AWSSNS: a67710a80c8d380e34248b16e503e0719f02a28d
-  AWSUserPoolsSignIn: 8383829e97d2a47984276fc7260f3bdfeddc6d2e
+  AWSCore: 5cbb6c6ccfad4b55e494c2e8df87781512f7881e
+  AWSIoT: d7debf750a8f485a9e93177fda7a345a9121053b
+  AWSPinpoint: a8f3b032049e4e25e338ffe4707b6519a46c64aa
+  AWSSNS: 57f5da30ff32e151afcea1f7772a19a45bf4f544
+  AWSUserPoolsSignIn: 2402bd83d3cd32af1440671ec7919f07cdacd59c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: bb0b2db5fd8f7ccc5eec27def94ad455f564ab30

@@ -16,7 +16,7 @@
 #define xScreenH               [self getScreenSize].height
 #define xScreenW               [self getScreenSize].width
 #define CognitoIdentityPoolId  @"us-west-2:cbae569d-0712-42ed-8a56-e31e75e2abe8"
-#define IOT_ENDPOINT           @"https://a2lly389btqeax.iot.us-west-2.amazonaws.com"
+#define IOT_ENDPOINT           @"https://a2lly389btqeax-ats.iot.us-west-2.amazonaws.com"
 
 typedef void(^EventCallBack)(NSString *shadowName,
                              AWSIoTShadowOperationType operation,
@@ -568,17 +568,25 @@ typedef void(^EventCallBack)(NSString *shadowName,
 #pragma mark - UI
 -(void) setupUILayout
 {
+    NSLog(@"xScreenW = %f, xScreenH = %f",xScreenW, xScreenH);
     UIImageView *back_imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back"]];
     [self.view addSubview:back_imageView];
     [back_imageView mas_remakeConstraints:^(MASConstraintMaker *make){
-        make.size.mas_equalTo(self.view);
+        make.width.mas_equalTo( 375);//.multipliedBy( xScreenW/375);
+        make.height.mas_equalTo(667);//.multipliedBy( 544/xScreenH);//).multipliedBy(2.5);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.centerY.mas_equalTo(self.view.mas_centerY);
+
     }];
     
     _LED_imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"green"]];
     [self.view addSubview:_LED_imageView];
     [_LED_imageView setAlpha:0];
     [_LED_imageView mas_remakeConstraints:^(MASConstraintMaker *make){
-        make.size.mas_equalTo(self.view);
+        make.width.mas_equalTo( 375);//.multipliedBy( xScreenW/375);
+        make.height.mas_equalTo(667);//.multipliedBy( 544/xScreenH);//).multipliedBy(2.5);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.centerY.mas_equalTo(self.view.mas_centerY);
     }];
     
     UIButton *connectBTN = [UIButton buttonWithType:UIButtonTypeCustom];
